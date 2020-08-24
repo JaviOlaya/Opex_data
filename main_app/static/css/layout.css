@@ -1,0 +1,21 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    display: flexbox;
+
+}
+header{
+    position: relative;
+    height: 15vh;
+    blackground: gold;
+}
+.content{
+    position: relative;
+    height: 70vh;
+    background: red;
+}
+footer{
+    height: 15vh;
+    background:blue;
+}
