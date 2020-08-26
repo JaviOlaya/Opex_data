@@ -2,20 +2,77 @@
     margin: 0px;
     padding: 0px;
     text-decoration: none;
-    display: flexbox;
+    
 
 }
+body{
+    display:flex;
+    height:100vh;
+    width:100vw;
+    flex-direction: column;
+ 
+}
 header{
+    display: flexbox;
     position: relative;
-    height: 15vh;
-    blackground: gold;
+    width: 100vw;
+    height: 7.3vh;
+    /* background: #f9ea31; */
+    
+}
+header #fondo{
+    /* background:#7ab929; */
+    width: 100%;
+    height: 6.5vh;
+}
+#logo-header{
+    height: 7.3vh;
+    width: 4.1vw;
+    justify-self: flex-start;
+}
+header nav{
+    display: flex;
+    position: absolute;
+    height: 7.3vh;
+    width:100vw;    
+    /* background:#294f36; */
+    background: linear-gradient(#294f36,#7ab929);
+    flex-flow: wrap;
+    
+    top:0vh;
+}
+header nav ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    align-items: center;
+    justify-content: space-around;
+}
+header nav ul li a{
+    padding:15px;
+    transition: all 300ms;
+    /* color: #7ab929; */
+    color:white;
+}
+header nav ul li a:hover{
+    background:#7ab929;
+    color:#f9ea31;
+    border: 2px solid white;
+    border-radius: 0.3rem;
 }
 .content{
+    display: flexbox;
     position: relative;
-    height: 70vh;
-    background: red;
+    height: 80vh;
+    width: 100vw;
+   
 }
 footer{
-    height: 15vh;
+    display: flex;
+    position: relative;
+    height: 12.7vh;
+    width:100vw;
+    justify-content: center;
     background:blue;
+    
 }

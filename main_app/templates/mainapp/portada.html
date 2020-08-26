@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/portada.css' %}">
+    <title>{% block title %}{{title}} {% endblock %}</title>
+</head>
+<body>
+
+<section>
+    <div class="card">
+            <p id="p1"><img src="{% static 'img/logo3.png' %}" alt=""></p>
+            <p id="p2"><img src="{% static 'img/titulo.png' %}" alt=""></p>
+            <p id="p3">
+                <span class="boton">
+                    <a href="#">Login</a>
+                </span>
+                <span class="boton">
+                    <a href="#">Registro</a>
+                </span>
+                </p>
+        
+        
+        
+    </div>
+</section>
+</body>
+</html>
