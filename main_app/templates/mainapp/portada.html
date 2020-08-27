@@ -14,8 +14,8 @@
             <p id="p1"><img src="{% static 'img/logo3.png' %}" alt=""></p>
             <p id="p2"><img src="{% static 'img/titulo.png' %}" alt=""></p>
             <p id="p3">
-                    <a id="boton1" href="#">Login</a>
-                    <a id ="boton2" href="#">Registro</a>
+                    <a id="boton1" href="{% url 'login' %}">Login</a>
+                    <a id ="boton2" href="{% url 'register' %}">Registro</a>
                 
                 </p>
         

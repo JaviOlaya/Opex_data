@@ -1,3 +1,36 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/layout.css' %}">
 {% block title %}{{title}} {% endblock %}
+
+{% block content %}
+    <section id="contenido">
+        <div id="card">
+            <h1>{{title}}</h1>
+
+            {{register_form.errors}}
+        
+            <form action="" method="post">
+                {% csrf_token %}
+        
+                {% comment %}
+                    {{register_form.as_p}}
+        
+                    {{register_form.username}}
+                {% endcomment %}
+        
+                {% for field in register_form %}
+        
+                    <p>
+                        <label for="">{{field.label}}</label>
+                        {{field}}
+                    </p>
+                {% endfor %}
+                <input type="submit" value="Registrarse">
+            </form>
+        </div>
+    </section>
+    <footer>
+
+    </footer>
+
+{% endblock %}
