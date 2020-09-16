@@ -31,7 +31,7 @@ def register_page(request):
                 register_form.save()
                 messages.success(request, 'te has registrado correctamente')
                 
-                return redirect('index')
+                return redirect('portada')
         
         return render(request, 'users/register.html',{
             'title': 'Registro',
@@ -51,7 +51,7 @@ def login_page(request):
         
             if user is not None:
                 login(request, user)
-                return redirect('portada')
+                return redirect('inicio')
             else:
                 messages.warning(request,'No te has identificado correctamente')
         

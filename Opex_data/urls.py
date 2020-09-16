@@ -20,4 +20,8 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('main_app.urls')),
+    path('', include('input_app.urls')),
+    path('', include('costs_app.urls')),
+    path('', include('owc_app.urls')),
+    path('', include('sales_app.urls')),
 ]
