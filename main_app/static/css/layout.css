@@ -17,11 +17,9 @@ header{
     position: relative;
     width: 100vw;
     height: 7.3vh;
-    /* background: #f9ea31; */
     
 }
 header #fondo{
-    /* background:#7ab929; */
     width: 100%;
     height: 6.5vh;
 }
@@ -73,6 +71,9 @@ footer{
     height: 12.7vh;
     width:100vw;
     justify-content: center;
-    background:blue;
-    
+    align-items: center;
+}
+footer span{
+    margin-left: 10px;
+    color:#294f36;
 }

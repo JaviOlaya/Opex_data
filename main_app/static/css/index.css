@@ -1,0 +1,8 @@
+.card_menu{
+    width:50vw;
+    height:50vh;
+    border-radius:10px 10px 10px 10px;
+    justify-self:center;
+    align-self:center;
+    border:1px solid black;
+}

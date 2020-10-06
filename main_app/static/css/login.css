@@ -79,5 +79,5 @@ footer{
     height: 12.7vh;
     width:100vw;
     justify-content: center;
-    background:blue;
+    border-top: 1px solid black;
 }
