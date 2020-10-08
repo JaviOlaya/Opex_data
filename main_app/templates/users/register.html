@@ -1,6 +1,6 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/register.css' %}">
-
+<link rel="shortcut icon" href="{% static 'img/logo1.png' %}" type="image/x-icon">
 
 {% block content %}
     <section id="contenido">
@@ -29,8 +29,10 @@
             </form>
         </div>
     </section>
+    <hr/>
     <footer>
-
+        <img id="logo-header" src="{% static 'img/logo2.png' %}" alt="" srcset="">
+        <span>Copyright &copy; Agroturn 2020. All rights reserved.</span>
     </footer>
 
 {% endblock %}
