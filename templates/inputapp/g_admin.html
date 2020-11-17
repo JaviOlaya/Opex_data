@@ -1,0 +1,9 @@
+<!-- {% extends 'layouts/layout.html' %} -->
+{% block title %}{{proyecto_detail.title}}{% endblock %}
+
+{% block content %}
+  <h1 class="title">{{proyecto_detail.id}} {{proyecto_detail.title}}</h1>
+  <p class="content">{{proyecto_detail.description|safe}} </p>
+  <span class="date1">{{proyecto_detail.created_at}}</span>
+  <span class="date2">{{proyecto_detail.updated_at}}</span>
+{% endblock %}

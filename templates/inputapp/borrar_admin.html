@@ -1,0 +1,14 @@
+{% extends 'layouts/layout.html' %}
+{% block title %}
+    Delete Admin
+{% endblock %}
+{% block content %}
+<h1>Delete Administrative cost</h1>
+
+<form action="" method="post">
+    {% csrf_token %}
+    <p>Confirm that you want to delete the record</p>
+    <button type="submit">Delete</button>
+</form>
+{% endblock content %}
+    

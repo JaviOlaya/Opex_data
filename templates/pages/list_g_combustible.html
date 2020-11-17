@@ -1,0 +1,50 @@
+{% extends 'layouts/layout.html' %}
+
+{% block title %}Proyectos{% endblock %}
+
+{% block content %}
+
+
+          <div id="main-container" style="display: flex; justify-content:center;">
+            <h1 > ADMINISTRATIVE EXPENSES DATA LIST </h1>
+            <table class="table">
+                <thead class="is-selected">
+                    <tr>
+                    
+                            <th >Id</th>
+                            <th >Tipo de Gasto</th>
+                            <th >Proyecto</th>
+                            <th >Fecha gasto</th>
+                            <!-- <th >End Date</th> -->
+                            <th >Creation Date</th>
+                            <th >Update Date</th>
+                           
+                        
+                    </tr>
+                </thead>
+                {% for proyecto in object_list %}
+                <tr>
+                    <td>
+                        {{proyecto.id}}  
+                        
+                </td>
+                   <td>
+                        {{proyecto.TipoGasto}}  
+                        
+                </td>
+                    <!-- <td>{{proyecto.description}}</td> -->
+                    <td>{{proyecto.proyecto}}</td>
+        
+                    <td>{{proyecto.fecha_gasto}}</td>
+                   
+                    <td>{{proyecto.created_at}}</td>
+                    <td>{{proyecto.updated_at}}</td>
+                   
+            </tr>
+                {% endfor %}
+               
+            </table>
+        </div>
+ 
+   
+{% endblock %}

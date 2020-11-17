@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+   
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="shortcut icon" href="../../static/img/logo1.png" type="image/x-icon">
+    <title>Opex_app</title>
+    <style>
+        #login,#register,.boton{
+    
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1rem;
+            font-size: 1rem;
+            border: 1px solid whitesmoke;
+            box-shadow: 5px 5px 7px #294f36;
+            margin-bottom:10vh;
+            width:12vw;
+            height: 6vh;
+            border-radius: 30px 30px 30px 30px;
+            color:white;
+            background-color: #294f36 ;
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+</head>
+<body >
+    <section style="display: flex; flex-direction:column;align-items:center;">
+        <p style="display:flex;flex-direction:row;justify-content:center;" class="Tportada"><h1 id = "Tportada1" > Opex </h1></p><p style="display:flex;flex-direction:row" class="Tportada"></p><h1 id = "Tportada2"> Data</h1></p>
+    
+        {% if messages %}
+            {% for message in messages %}
+                <div class='alert'>
+                    {{message}}
+                </div>
+            {% endfor %}
+        {% endif %}
+        <div class="card" style="height:50vh;">
+           
+            <a id="login" href="{% url 'mainapp:login' %}" style="font-family: 'Montserrat', sans-serif;"><img src="../static/img/logo1.png" style="width: 1rem; height:1rem;" alt=""> Login</a><a id="register" href="{% url 'mainapp:registro' %}" style="font-family: 'Montserrat', sans-serif;"><img src="../static/img/logo1.png" style="width: 1rem; height:1rem;" alt="">Register</a>
+        </div>
+        <footer style="display:flex;justify-content:center;position:absolute;bottom:3vh;left:6vw;"> 
+            <div id="logos">
+                <img src="../../static/img/logo3.png" style="width: 5vw; height: 5vh" alt="" />
+                <img src="../../static/img/titulo.png" style="width: 10vw; height: 5vh" alt="" />
+            </div>
+        </footer>
+    </section>
+  
+</body>
+</html>

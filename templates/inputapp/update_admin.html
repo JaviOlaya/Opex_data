@@ -1,0 +1,14 @@
+{% extends 'layouts/layout.html' %}
+{% block title %}Admin{% endblock %}
+
+{% block content %}
+<div class="field">
+    <h1>Update Admin cost</h1>
+
+<form action="" method="post">
+{% csrf_token %}
+{{form.as_p}}
+<button type="submit">Update</button>
+</form>
+</div>
+{% endblock %}

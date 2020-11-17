@@ -1,0 +1,22 @@
+{% extends 'layouts/layout.html' %}
+{% block title %}
+    Edit User Data
+{% endblock %}
+
+{% block content %}
+    <h1>Form Edit Profile</h1>
+
+    {{update_form.errors}}
+        <form action="" method="post" id="registro" style="display:flex; flex-direction:column;width:30vw">
+            {% csrf_token %}
+           
+            {% for field in update_form %}
+            <div class="textbox" >
+                {{field.label}}
+                {{field}}
+            </div>
+                
+            {% endfor %}
+            <button class="boton" type="submit"><img src="../static/img/logo1.png" style="width: 1rem; height:1rem;" alt="">Update</button>
+    </form>
+{% endblock %}

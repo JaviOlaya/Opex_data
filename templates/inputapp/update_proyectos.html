@@ -1,0 +1,14 @@
+{% extends 'layouts/layout.html' %}
+{% block title %}Project{% endblock %}
+
+{% block content %}
+<div class="field">
+    <h1>Update Project cost</h1>
+
+<form action="" method="post">
+{% csrf_token %}
+{{form.as_p}}
+<button type="submit">Update</button>
+</form>
+</div>
+{% endblock %}

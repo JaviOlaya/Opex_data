@@ -1,0 +1,44 @@
+{% extends 'layouts/layout.html' %}
+{% block title %} Admin Costs {% endblock %}
+
+{% block content %}
+<style>
+    form input, form select, form textarea, form option {
+        border-radius: 5px;
+        border: 1px solid #17a2b8;
+        outline: none;
+        background: none;
+        padding: 5px;
+        width: 100%;
+    
+    }
+    .boton{
+    
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 1rem;
+        font-size: 1rem;
+        border: 1px solid whitesmoke;
+        box-shadow: 5px 5px 7px #294f36;
+        margin-bottom:10vh;
+        width:12vw;
+        height: 6vh;
+        border-radius: 30px 30px 30px 30px;
+        color:white;
+        background-color: #294f36 ;
+        font-family: 'Montserrat', sans-serif;
+    }
+    </style>
+<div class="formCard" style="display:flex;flex-direction:column;position:absolute;right:30vw;top:10vh;">
+    <h1 style="position:absolute;display:flex;align-self:center;">Add a new project</h1>
+    
+<form action="" method="post" class="post-form" style="display: flex; flex-direction:column;">
+    {% csrf_token %}
+        {{form.as_p}}
+ 
+    
+<button type="submit" style="width:10vw;" class="boton">Send</button>
+</form>
+</div>
+{% endblock %}

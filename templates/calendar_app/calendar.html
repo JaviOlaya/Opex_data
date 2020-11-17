@@ -1,0 +1,115 @@
+{% extends 'layouts/layout1.html' %}
+
+
+{% block title %}
+Calendar
+{% endblock %}
+
+{% block content %}
+<style>
+/* Common styles */
+body {
+	font-family: "ptsans", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	
+  }
+  
+  .left {
+	float: left;
+  }
+  
+  .right {
+	float: right;
+  }
+  
+  .btn {
+	outline: none;
+	color: black;
+	background-color: transparent;
+	box-shadow: 0 0 0 0;
+	margin-right: 3px;
+  }
+  
+  .clearfix {
+	margin: 15px;
+  }
+  
+  .form {
+	margin: auto;
+  }
+  
+  .form input, .form select, .form textarea {
+	border-radius: 5px;
+	border: 1px solid #17a2b8;
+	outline: none;
+	background: none;
+	padding: 5px;
+	width: 70%;
+  }
+  
+  /* App styles */
+  .title {
+	text-align: center;
+	margin: 10px;
+  }
+  
+  .calendar {
+	width: 98%;
+	margin: auto;
+	font-size: 13px;
+  }
+  
+  .calendar tr, .calendar td {
+	border: 1px solid black;
+  }
+  
+  .calendar th {
+	padding: 10px;
+	text-align: center;
+	font-size: 18px;
+  }
+  
+  .calendar td {
+	width: 200px;
+	height: 150px;
+	padding: 20px 0px 0px 5px;
+  }
+  
+  .month {
+	font-size: 25px;
+  }
+  
+  .date {
+	font-size: 16px;
+  }
+  
+  ul {
+	height: 100%;
+	padding: 0px 5px 0px 20px;
+  }
+  
+  a {
+	color: #294f36;
+  }
+
+</style>
+<div style="width:70vw;height:50vh;position:relative;left:20vw;display:flex;flex-direction:column;">
+	<div class="clearfix">
+		<a class="btn btn-info left" href="{% url 'calendar_app:calendar' %}?{{ prev_month }}"> Previous Month </a>
+		<a class="btn btn-info right" href="{% url 'calendar_app:calendar' %}?{{ next_month }}"> Next Month </a>
+		<a class="btn btn-info right" href="{% url 'calendar_app:event_new' %}"> New Event </a>
+	</div>
+	
+	{{ calendar }}
+
+</div>
+
+
+{% endblock %}
+<hr style="color: #294f36" />
+
+    <footer  style="display:flex;justify-content:center;position:relative;bottom:3vh;left:6vw;">
+        <div id="logos">
+            <img src="../../static/img/logo3.png" style="width: 5vw; height: 5vh" alt="" />
+            <img src="../../static/img/titulo.png" style="width: 10vw; height: 5vh" alt="" />
+        </div>
+    </footer>

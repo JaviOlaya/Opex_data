@@ -1,0 +1,76 @@
+
+        {% extends 'layouts/layout.html' %}
+
+        {% block title %}Staff list{% endblock %}
+        
+        {% block content %}
+        
+        
+        
+        <div class="cuerpo" style="margin-top:100px;margin-left:280px">
+            <table class="table">
+              <thead>
+                <tr class="is-selected">
+                    <th>Id</th>
+                    <th >Project</th>
+                    <th>Nº employees</th>
+                    <th>Department</th>
+                    <th>Created at</th>
+                    <th>Updated at</th>
+              </tr>
+              </thead>
+          
+              <tbody>
+                
+                {% for personal in object_list  %}
+                <tr>
+                    <td>{{personal.id}}</td>
+                    <td>{{personal.proyecto}}</td>
+                    <td>{{personal.numero_empleados}}</td>
+                    <td>{{personal.plantilla}}</td>
+                    <td>{{personal.created_at}}</td>
+                    <td>{{personal.updated_at}}</td>
+                  
+                  {% endfor %}
+              </tbody>
+            </table>
+        
+          <div class="paginas">
+           
+          </div>
+          
+          {% if is_paginated %}
+          <nav class="pagination" role="navigation" aria-label="pagination">
+           
+            <ul class="pagination-list">
+              {% if page_obj.has_previous %}
+             <li> <a href="?page={{page_obj.previous_page_number}}" class="pagination-previous">Previous</a></li>
+              {% endif %}
+            {% for pagina in paginator.page_range %}
+              
+              {% ifequal pagina page_obj.number  %}
+              <li><a class="pagination-link is-current" aria-label="Page 46" aria-current="page">{{pagina}}</a></li>
+              {% else %}
+              <li>
+                <a class="pagination-link" href="?page={{pagina}}" >{{ pagina }}</a>
+              </li>
+              {% endifequal %}
+                
+            
+            {% endfor %}
+            
+            {% if page_obj.has_next %}
+              <li><a href="?page={{page_obj.next_page_number}}" class="pagination-next">Next page</a></li>
+            {% endif %}
+              
+            
+          </ul>
+            
+          
+          </nav>
+        </div>
+          {% endif %}
+        
+        
+        
+        {% endblock %}

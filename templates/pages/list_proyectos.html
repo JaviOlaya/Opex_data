@@ -1,0 +1,75 @@
+{% extends 'layouts/layout.html' %}
+
+{% block title %}Projects{% endblock %}
+
+{% block content %}
+
+
+
+<div class="cuerpo" style="margin-top:100px;margin-left:280px">
+    <table class="table">
+      <thead>
+        <tr class="is-selected">
+            <th>Name</th>
+            <th >Start Date</th>
+            <th>End Date</th>
+            <th>Creation Date</th>
+            <th>Update Date</th>
+            <th>User</th>
+      </tr>
+      </thead>
+  
+      <tbody>
+        
+        {% for proyecto in object_list  %}
+        <tr>
+            <td>{{proyecto.nombre}}</td>
+            <td>{{proyecto.fecha_inicio}}</td>
+            <td>{{proyecto.fecha_final}}</td>
+            <td>{{proyecto.created_at}}</td>
+            <td>{{proyecto.updated_at}}</td>
+          <td>{{proyecto.user}}</td>
+          
+          {% endfor %}
+      </tbody>
+    </table>
+
+  <div class="paginas">
+   
+  </div>
+  
+  {% if is_paginated %}
+  <nav class="pagination" role="navigation" aria-label="pagination">
+   
+    <ul class="pagination-list">
+      {% if page_obj.has_previous %}
+     <li> <a href="?page={{page_obj.previous_page_number}}" class="pagination-previous">Previous</a></li>
+      {% endif %}
+    {% for pagina in paginator.page_range %}
+      
+      {% ifequal pagina page_obj.number  %}
+      <li><a class="pagination-link is-current" aria-label="Page 46" aria-current="page">{{pagina}}</a></li>
+      {% else %}
+      <li>
+        <a class="pagination-link" href="?page={{pagina}}" >{{ pagina }}</a>
+      </li>
+      {% endifequal %}
+        
+    
+    {% endfor %}
+    
+    {% if page_obj.has_next %}
+      <li><a href="?page={{page_obj.next_page_number}}" class="pagination-next">Next page</a></li>
+    {% endif %}
+      
+    
+  </ul>
+    
+  
+  </nav>
+</div>
+  {% endif %}
+
+
+
+{% endblock %}
