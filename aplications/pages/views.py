@@ -41,11 +41,7 @@ class ListGastoAdministrativo(ListView):
     ordering = 'id'
     model = GastoAdministrativo
 
-class ListGastoAdministrativo(ListView):
-    template_name = "pages/list_g_admin.html"
-    paginate_by = 4
-    ordering = 'id'
-    model = GastoAdministrativo    
+ 
 
 class ListElectricCost(ListView):
     template_name="pages/list_g_electro.html"
@@ -125,6 +121,156 @@ class ListMacroeconomicsIndicator(ListView):
     ordering = "id"
     context_object_name ="List Macroeconomics Indicators"
 
+
+class ProyectoDetailView(DetailView):
+    model = Proyecto
+    template_name = "pages/Detail_proyectos.html"
+
+    
+    def get_context_data(self, **kwargs):
+        context = super(EmpleadoDetailView, self).get_context_data(**kwargs)
+        context['titulo'] = 'Empleado del mes'
+        
+        return context
+    
+class PersonalDetailView(DetailView):
+    model = Personal
+    template_name = "pages/Detail_personal.html"
+
+    
+    def get_context_data(self, **kwargs):
+        context = super(EmpleadoDetailView, self).get_context_data(**kwargs)
+        context['titulo'] = 'Empleado del mes'
+        
+        return context
+
+class ListGastoAdministrativoDetailView(DetailView):
+    model = GastoAdministrativo
+    template_name = "pages/Detail_g_admin.html"
+
+    
+    def get_context_data(self, **kwargs):
+        context = super(EmpleadoDetailView, self).get_context_data(**kwargs)
+        context['titulo'] = 'Empleado del mes'
+        
+        return context
+    
+class ElectricCostDetailView(DetailView):
+    model = GastoElectrico 
+    template_name = "pages/Detail_g_electro.html"
+
+    
+    def get_context_data(self, **kwargs):
+        context = super(EmpleadoDetailView, self).get_context_data(**kwargs)
+        context['titulo'] = 'Empleado del mes'
+        
+        return context
+
+class GasCostDetailView(DetailView):
+    model = GastoGas
+    template_name = "pages/Detail_g_gas.html"
+
+    
+    def get_context_data(self, **kwargs):
+        context = super(EmpleadoDetailView, self).get_context_data(**kwargs)
+        context['titulo'] = 'Empleado del mes'
+        
+        return context
+
+class FertilizerCostDetailView(DetailView):
+    model = GastoFertilizante
+    template_name = "pages/Detail_g_fertilizante.html"
+
+    
+    
+
+class SubstrateCostDetailView(DetailView):
+    model = GastoSubstrato
+    template_name = "empleado/detalle_g_substrato.html"
+
+    
+    def get_context_data(self, **kwargs):
+        context = super(SubstrateCostDetailView, self).get_context_data(**kwargs)
+        context['titulo'] = 'Empleado del mes'
+        
+        return context
+
+class ShippingCostDetailView(DetailView):
+    model = GastoEnvio
+    template_name = "empleado/detalle_g_envio.html"
+
+    
+    def get_context_data(self, **kwargs):
+        context = super(ShippingCostDetailView, self).get_context_data(**kwargs)
+        context['titulo'] = 'Empleado del mes'
+        
+        return context
+
+class SeedsCostDetailView(DetailView):
+    model = GastoSemillas
+    template_name = "empleado/detalle_g_semillas.html"
+
+    
+    def get_context_data(self, **kwargs):
+        context = super(SeedsCostDetailView, self).get_context_data(**kwargs)
+        context['titulo'] = 'Empleado del mes'
+        
+        return context
+
+class FuelCostDetailView(DetailView):
+    model = GastoCombustible
+    template_name = "empleado/detalle_g_combustible.html"
+
+    
+    def get_context_data(self, **kwargs):
+        context = super(FuelCostDetailView, self).get_context_data(**kwargs)
+        context['titulo'] = 'Empleado del mes'
+        
+        return context
+
+class CleaningCostDetailView(DetailView):
+    model = GastoLimpieza
+    template_name = "empleado/detalle_g_limpieza.html"
+
+    
+    def get_context_data(self, **kwargs):
+        context = super(CleaningCostDetailView, self).get_context_data(**kwargs)
+        context['titulo'] = 'Empleado del mes'
+        
+        return context
+
+class VariousCostDetailView(DetailView):
+    model = VariosGasto
+    template_name = "empleado/detalle_g_vario.html"
+
+    
+    def get_context_data(self, **kwargs):
+        context = super(VariousCostDetailView, self).get_context_data(**kwargs)
+        context['titulo'] = 'Empleado del mes'
+        
+        return context
+
+class TaxRateDetailView(DetailView):
+    model = taxRate
+    template_name = "empleado/detalle_g_taxrate.html"
+
+    
+    def get_context_data(self, **kwargs):
+        context = super(TaxRateDetailView, self).get_context_data(**kwargs)
+        context['titulo'] = 'Empleado del mes'
+        
+        return context
+
+class MacroeconomicsIndicatorDetailView(DetailView):
+    model = macroeconomicsIndicators
+    template_name = "empleado/detalle_g_macroeconomics.html"
+
+    
+    def get_context_data(self, **kwargs):
+        context = super(MacroeconomicsIndicatorDetailView, self).get_context_data(**kwargs)
+        context['titulo'] = 'Empleado del mes'
+        
+        return context
     # context_object_name = 'lista'
 
     # def list_proyecto(request):

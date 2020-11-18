@@ -462,7 +462,41 @@ class CleaningCostDeleteView(DeleteView):
     template_name = "inputapp/borrar_cleaning.html"
     success_url = reverse_lazy('inputapp:correcto')  
 
-
+class RemediesCostCreateView(CreateView):
+    template_name = 'inputapp/create_g_remedio.html'
+    model = GastoRemedio
+    fields = '__all__'
+    success_url = 'reverse_lazy(inputapp:correcto)'
+    
+    def form_valid(self, form):
+            #logica del proceso
+        gasto_various = form.save(commit=False)
+        gasto_various.save()
+        return super(VariousCostCreateView, self).form_valid(form)
+    
+    
+class RemediesCostUpdateView(UpdateView):
+    model = GastoRemedio
+    template_name = "inputapp/update_remedio.html"
+    fields = '__all__'
+    success_url = reverse_lazy('inputapp:correcto')
+    
+    def post(self, request, *args, **kwargs):
+        self.object  = self.get_object()
+        print("*******METODO POST*******")
+        print("=========================")
+        return super().post(request, *args, **kwargs)
+      
+    def form_valid(self, form):
+        #logica del proceso
+        print("*******VALIDACION********")
+        print("*************************")
+        return super(VariousCostUpdateView, self).form_valid(form)
+   
+class RemediesCostDeleteView(DeleteView):
+    model = GastoRemedio
+    template_name = "inputapp/borrar_remedio.html"
+    success_url = reverse_lazy('inputapp:correcto')
 
 
 

@@ -140,68 +140,53 @@
     <div class="sidebar">
       <div style="width: 100%; display:flex; justify-content:center">
         <img src="../../static/img/logo1.png" style="width: 5vw; height: 5vh" alt="" /></div>
-      <ul>
-        <li><a href="{% url 'mainapp:inicio' %}"><i class="fas fa-home"></i>Home</a></li>
-
-        <li class="Dropdowna" style="color: #bdb8d7;"><i class="fas fa-list-alt"></i> List Registries<i
-          class="fa fa-caret-down"></i>
-      </li>
-        <ul class="dropdown-container">
-          <li><a href="{% url 'inputapp:addProject' %}"><i class="fas fa-plus-circle"></i>Add a new project</a></li>
-          <li><a href="{% url 'inputapp:addStaff' %}"><i class="fas fa-plus-circle"></i>Add a new Staff</a></li>
-          <li><a href="{% url 'inputapp:addElectricCost' %}"><i class="fas fa-plus-circle"></i>Add a new Electric
-              cost</a></li>
-          <li><a href="{% url 'inputapp:addadmin_cost' %}"><i class="fas fa-plus-circle"></i>Add a new Administrative
-              Cost</a></li>
-          <li><a href="{% url 'inputapp:addGascost' %}"><i class="fas fa-plus-circle"></i>Add a new Gas Cost</a></li>
-          <li><a href="{% url 'inputapp:addFertilizercost' %}"><i class="fas fa-plus-circle"></i>Add a new Fertilizer
-              Cost</a></li>
-          <li><a href="{% url 'inputapp:addSubstratecost' %}"><i class="fas fa-plus-circle"></i>Add a new Substrate
-              Cost</a></li>
-          <li><a href="{% url 'inputapp:addShippingCost' %}"><i class="fas fa-plus-circle"></i>Add a new Shipping
-              Cost</a></li>
-          <li><a href="{% url 'inputapp:addSeedsCost' %}"><i class="fas fa-plus-circle"></i>Add a new Seeds cost</a>
+        <ul>
+          <li><a href="{% url 'mainapp:inicio' %}"><i class="fas fa-home"></i>Home</a></li>
+          <li class="Dropdowna" style="color: #bdb8d7;"><i class="fas fa-plus"></i> Add Registries <i class="fa fa-caret-down"></i>
           </li>
-          <li><a href="{% url 'inputapp:addFuelCost' %}"><i class="fas fa-plus-circle"></i>Add a new Fuel cost</a></li>
-          <li><a href="{% url 'inputapp:addCleaningCost' %}"><i class="fas fa-plus-circle"></i>Add a new Cleaning
-              Cost</a></li>
-          <li><a href="{% url 'inputapp:addVariousCost' %}"><i class="fas fa-plus-circle"></i>Add a Various Cost</a>
+      <ul class="dropdown-container">
+        
+   <li><a href="{% url 'inputapp:addProject' %}"><i class="fas fa-plus-circle"></i>Add a new project</a></li>
+            <li><a href="{% url 'inputapp:addStaff' %}"><i class="fas fa-plus-circle"></i>Add a new Staff</a></li>
+            <li><a href="{% url 'inputapp:addElectricCost' %}"><i class="fas fa-plus-circle"></i>Add a new Electric cost</a></li>
+            <li><a href="{% url 'inputapp:addadmin_cost' %}"><i class="fas fa-plus-circle"></i>Add a new Administrative Cost</a></li>
+            <li><a href="{% url 'inputapp:addGascost' %}"><i class="fas fa-plus-circle"></i>Add a new Gas Cost</a></li>
+            <li><a href="{% url 'inputapp:addFertilizercost' %}"><i class="fas fa-plus-circle"></i>Add a new Fertilizer Cost</a></li>
+            <li><a href="{% url 'inputapp:addSubstratecost' %}"><i class="fas fa-plus-circle"></i>Add a new Substrate Cost</a></li>
+            <li><a href="{% url 'inputapp:addShippingCost' %}"><i class="fas fa-plus-circle"></i>Add a new Shipping Cost</a></li>
+            <li><a href="{% url 'inputapp:addSeedsCost' %}"><i class="fas fa-plus-circle"></i>Add a new Seeds cost</a></li>
+            <li><a href="{% url 'inputapp:addFuelCost' %}"><i class="fas fa-plus-circle"></i>Add a new Fuel cost</a></li>
+            <li><a href="{% url 'inputapp:addCleaningCost' %}"><i class="fas fa-plus-circle"></i>Add a new Cleaning Cost</a></li>
+            <li><a href="{% url 'inputapp:addVariousCost' %}"><i class="fas fa-plus-circle"></i>Add a Various Cost</a></li>
+            <li><a href="{% url 'inputapp:macroIndi' %}"><i class="fas fa-plus-circle"></i>Add bew Macroeconomics Indicators</a></li>
+            <li><a href="{% url 'inputapp:addTaxRate' %}"><i class="fas fa-plus-circle"></i>Add a new Tax rate</a></li>
+          </ul>
+          
+          <li class="Dropdowna" style="color: #bdb8d7;"><i class="fas fa-list-alt"></i> List Registries <i class="fa fa-caret-down"></i>
           </li>
-          <li><a href="{% url 'inputapp:macroIndi' %}"><i class="fas fa-plus-circle"></i>Add bew Macroeconomics
-              Indicators</a></li>
-          <li><a href="{% url 'inputapp:addTaxRate' %}"><i class="fas fa-plus-circle"></i>Add a new Tax rate</a></li>
-        </ul>
-
-        <li class="Dropdowna" style="color: #bdb8d7;"><i class="fas fa-list-alt"></i> List Registries<i
-            class="fa fa-caret-down"></i>
-        </li>
-        <ul class="dropdown-container">
-          <li><a href="{% url 'pages:proyectos' %}"><i class="fas fa-plus-circle"></i>List projects</a></li>
-          <li><a href="{% url 'pages:Lpersonal' %}"><i class="fas fa-plus-circle"></i>List Staff cost</a></li>
-          <li><a href="{% url 'pages:gadmin' %}"><i class="fas fa-plus-circle"></i>List Administrative costs</a></li>
-          <li><a href="{% url 'pages:listElectricCost' %}"><i class="fas fa-plus-circle"></i>List Electric cost</a></li>
-          <li><a href="{% url 'pages:listGascost' %}"><i class="fas fa-plus-circle"></i>List Gas cost</a></li>
-          <li><a href="{% url 'pages:listFertilizercost' %}"><i class="fas fa-plus-circle"></i>List Fertilizer cost</a>
-          </li>
-          <li><a href="{% url 'pages:listSubstratecost' %}"><i class="fas fa-plus-circle"></i>List Substrate cost</a>
-          </li>
-          <li><a href="{% url 'pages:listShippingCost' %}"><i class="fas fa-plus-circle"></i>Add a new Staff</a></li>
-          <li><a href="{% url 'pages:listSeedsCost' %}"><i class="fas fa-plus-circle"></i>List Seeds cost</a></li>
-          <li><a href="{% url 'pages:listFuelCost' %}"><i class="fas fa-plus-circle"></i>List fuel cost</a></li>
-          <li><a href="{% url 'pages:listCleaningCost' %}"><i class="fas fa-plus-circle"></i>Add a new Staff</a></li>
-          <li><a href="{% url 'pages:listVariousCost' %}"><i class="fas fa-plus-circle"></i>List various cost</a></li>
-          <li><a href="{% url 'pages:listTaxRate' %}"><i class="fas fa-plus-circle"></i>List Tax rate</a></li>
-          <li><a href="{% url 'pages:listMacroind' %}"><i class="fas fa-plus-circle"></i>List Macroeconomics
-              Indicators</a></li>
-        </ul>
-        <li><a href="{% url 'inputapp:addProject' %}"><i class="fas fa-plus-circle"></i> Add a </a></li>
-        <li><a href="{% url 'calendar_app:calendar' %}"><i class="fas fa-calendar-alt"></i>Calendar</a></li>
-        <li><a href="#"><i class="fas fa-chart-pie"></i> Data Analysis</a></li>
-        <li><a href="{% url 'mainapp:editProfile' %}"><i class="fas fa-user"></i>Profile</a></li>
-        <li><a href="{% url 'mainapp:logout' %}"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
-
-      </ul>
-
+          <ul  class="dropdown-container">
+            <li><a href="{% url 'pages:proyectos' %}"><i class="fas fa-list-alt"></i> List projects</a></li>
+            <li><a href="{% url 'pages:Lpersonal' %}"><i class="fas fa-list-alt"></i> List Staff cost</a></li>
+            <li><a href="{% url 'pages:gadmin' %}"><i class="fas fa-list-alt"></i> List Administrative costs</a></li>
+            <li><a href="{% url 'pages:listElectricCost' %}"><i class="fas fa-list-alt"></i> List Electric cost</a></li>
+            <li><a href="{% url 'pages:listGascost' %}"><i class="fas fa-list-alt"></i> List Gas cost</a></li>
+            <li><a href="{% url 'pages:listFertilizercost' %}"><i class="fas fa-list-alt"></i> List Fertilizer cost</a></li>
+            <li><a href="{% url 'pages:listSubstratecost' %}"><i class="fas fa-list-alt"></i> List Substrate cost</a></li>
+            <li><a href="{% url 'pages:listShippingCost' %}"><i class="fas fa-list-alt"></i> Add a new Staff</a></li>
+            <li><a href="{% url 'pages:listSeedsCost' %}"><i class="fas fa-list-alt"></i> List Seeds cost</a></li>
+            <li><a href="{% url 'pages:listFuelCost' %}"><i class="fas fa-list-alt"></i> List fuel cost</a></li>
+            <li><a href="{% url 'pages:listCleaningCost' %}"><i class="fas fa-list-alt"></i> Add a new Staff</a></li>
+            <li><a href="{% url 'pages:listVariousCost' %}"><i class="fas fa-list-alt"></i> List various cost</a></li>
+            <li><a href="{% url 'pages:listTaxRate' %}"><i class="fas fa-list-alt"></i> List Tax rate</a></li>
+            <li><a href="{% url 'pages:listMacroind' %}"><i class="fas fa-list-alt"></i> List Macroeconomics Indicators</a></li>
+          </ul>
+        
+          <li><a href="{% url 'calendar_app:calendar' %}"><i class="fas fa-calendar-alt"></i>Calendar</a></li>
+          <li><a href="#"><i class="fas fa-chart-pie"></i> Data Analysis</a></li>
+          <li><a href="{% url 'mainapp:editProfile' %}"><i class="fas fa-user"></i>Edit Profile</a></li>
+          <li><a href="{% url 'mainapp:logout' %}"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+          
+      </ul> 
     </div>
 
   </div>
