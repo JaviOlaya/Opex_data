@@ -1,46 +1,22 @@
 {% extends 'layouts/layout.html' %}
 
-{% block title %}Proyectos{% endblock %}
-
+{% block title %}
+ Substrate  Detail
+{% endblock title %}
+    
 {% block content %}
+<div style="display:flex; flex-direction: column;">
+<h1>View of the detail of expenses on substrate {{titulo}}</h1>
 
 
-          <div id="main-container" style="display: flex; justify-content:center;">
-            <h1 > ADMINISTRATIVE EXPENSES DATA LIST </h1>
-            <table class="table">
-                <thead >
-                    <tr class="is-selected">
-                    
-                            <th >Id</th>
-                            <th >Project</th>
-                            <th >Date of Expense</th>
-                            <!-- <th style="padding: 20px;">End Date</th> -->
-                            <th ">Creation Date</th>
-                            <th >Update Date</th>
-                           <th>Action</th>
-                        
-                    </tr>
-                </thead>
-                {% for proyecto in object_list %}
-                <tr>
-                    <td>
-                        {{proyecto.id}}  
-                        
-                </td>
-                
-                    <!-- <td>{{proyecto.description}}</td> -->
-                    <td>{{proyecto.proyecto}}</td>
-        
-                    <td>{{proyecto.fecha_gasto}}</td>
-                   
-                    <td>{{proyecto.created_at}}</td>
-                    <td>{{proyecto.updated_at}}</td>
-                    <td><a id="b1" href="{% url 'inputapp:updateSubstratecost' proyecto.id %}" style="color:green; margin-left:10px"><i class="fas fa-edit"></i></a> <a id="b1" href="{% url 'inputapp:deleteSubstratecost' proyecto.id %}" style="color:red;"><i class="fas fa-trash-alt"></i></a></td>
-            </tr>
-                {% endfor %}
-               
-            </table>
-        </div>
- 
-   
+<h3>All the data: </h3>
+<ul>
+    <li>Project: {{proyecto.proyecto}}</li>
+    <li>Date of expenditure: {{proyecto.fechaGasto}}</li>
+    <li>Price per unit of substrate: {{proyecto.SubstratoPrecio }} {{proyecto.monedaBasuraSolida}}</li>
+    <li>Quantity of substrate: {{proyecto.CantidadSubstrato}} {{proyecto. unitSubstrato}}</li>
+    <li> Registry created at: {{proyecto.created_at}}</li>
+    <li> Registry updated at: {{proyecto.updated_at}}</li>
+</ul>
+</div>
 {% endblock %}

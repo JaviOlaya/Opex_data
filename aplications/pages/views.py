@@ -23,6 +23,11 @@ from .models import Page
 #         "page":page
 #     })
 
+
+class DataAnalysisView(TemplateView):
+    template_name = "pages/data_analysis.html"
+
+
 class ListProyecto(ListView):
     template_name = "pages/list_proyectos.html"
     paginate_by = 4
@@ -92,6 +97,23 @@ class ListFuelCost(ListView):
     ordering = "id"
     context_object_name ="Fuel list"
 
+class ListRemedyCost(ListView):
+    template_name="pages/list_g_remedio.html"
+    model = GastoRemedio
+    paginate_by = 4
+    ordering = "id"
+    context_object_name ="Fuel list"
+    
+class RemedioDetailView(DetailView):
+    model = GastoRemedio
+    template_name = "pages/Detail_g_remedio.html"
+
+    
+    def get_context_data(self, **kwargs):
+        context = super(PersonalDetailView, self).get_context_data(**kwargs)
+   
+        
+        return context
 class ListCleaningCost(ListView):
     template_name="pages/list_g_limpieza.html"
     model = GastoLimpieza 
@@ -128,8 +150,8 @@ class ProyectoDetailView(DetailView):
 
     
     def get_context_data(self, **kwargs):
-        context = super(EmpleadoDetailView, self).get_context_data(**kwargs)
-        context['titulo'] = 'Empleado del mes'
+        context = super(ProyectoDetailView, self).get_context_data(**kwargs)
+        context['titulo'] = 'Project Detail'
         
         return context
     
@@ -139,8 +161,8 @@ class PersonalDetailView(DetailView):
 
     
     def get_context_data(self, **kwargs):
-        context = super(EmpleadoDetailView, self).get_context_data(**kwargs)
-        context['titulo'] = 'Empleado del mes'
+        context = super(PersonalDetailView, self).get_context_data(**kwargs)
+   
         
         return context
 
@@ -150,7 +172,7 @@ class ListGastoAdministrativoDetailView(DetailView):
 
     
     def get_context_data(self, **kwargs):
-        context = super(EmpleadoDetailView, self).get_context_data(**kwargs)
+        context = super(ListGastoAdministrativoDetailView, self).get_context_data(**kwargs)
         context['titulo'] = 'Empleado del mes'
         
         return context
@@ -161,7 +183,7 @@ class ElectricCostDetailView(DetailView):
 
     
     def get_context_data(self, **kwargs):
-        context = super(EmpleadoDetailView, self).get_context_data(**kwargs)
+        context = super(ElectricCostDetailView, self).get_context_data(**kwargs)
         context['titulo'] = 'Empleado del mes'
         
         return context
@@ -172,7 +194,7 @@ class GasCostDetailView(DetailView):
 
     
     def get_context_data(self, **kwargs):
-        context = super(EmpleadoDetailView, self).get_context_data(**kwargs)
+        context = super(GasCostDetailView, self).get_context_data(**kwargs)
         context['titulo'] = 'Empleado del mes'
         
         return context

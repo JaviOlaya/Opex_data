@@ -1,52 +1,25 @@
-{% extends 'layouts/layout.html' %}
 
-{% block title %}Administrative{% endblock %}
+     {% extends 'layouts/layout.html' %}
 
-{% block content %}
-
-<h1 > ADMINISTRATIVE EXPENSES DATA LIST </h1>
-          <div id="main-container" style="display: flex; justify-content:center;">
-            
-            <table class="table">
-                <thead >
-                    <tr class="is-selected">
-                    
-                            <th>Id</th>
-                            
-                            <th>Date of Expense</th>
-                            <th >Project</th>
-                            <th >Spending amount</th>
-                            <!-- <th style="padding: 20px;">End Date</th> -->
-                            <th >Creation Date</th>
-                            <th>Update Date</th>
-                           <th>Action</th>
-                        
-                    </tr>
-                </thead>
-                {% for proyecto in object_list %}
-                <tr>
-                    <td>
-                        {{proyecto.id}}  
-                        
-                </td>
-                   <td>
-                        {{proyecto.fecha_gasto}}  
-                        
-                </td>
-                    <!-- <td>{{proyecto.description}}</td> -->
-                    <td>{{proyecto.proyecto}}</td>
-        
-                    <td>{{proyecto.cantidadGasto}}</td>
-                   
-                    <td>{{proyecto.created_at}}</td>
-                    <td>{{proyecto.updated_at}}</td>
-                   
-            </tr>
-            <td><a id="b1" href="{% url 'inputapp:updateadmin_cost' proyecto.id %}" style="color:green; margin-left:10px"><i class="fas fa-edit"></i></a> <a id="b1" href="{% url 'inputapp:deleteadmin_cost' proyecto.id %}" style="color:red;"><i class="fas fa-trash-alt"></i></a></td>
-                {% endfor %}
-               
-            </table>
-        </div>
- 
-   
-{% endblock %}
+     {% block title %}
+         Staff Detail
+     {% endblock title %}
+         
+     {% block content %}
+     <div style="display:flex; flex-direction: column;">
+        <h1>View of the detail of personnel expenses {{titulo}}</h1>
+     
+     
+        <h3>All the data: </h3>
+        <ul>
+            <li>Project: {{proyecto.proyecto}}</li>
+            <li>Date of expenditure: {{proyecto.fecha_gasto}}</li>
+            <li>Description: {{proyecto.Descripcion}}</li>
+            <li>Spending amount: {{proyecto.cantidadGasto}} {{proyecto.monedaBasuraSolida}}</li>
+            <li>{{proyecto.TipoGasto}}</li>
+            <li>{{proyecto.created_at}}</li>
+            <li>{{proyecto.updated_at}}</li>
+        </ul>
+     </div>
+     
+     {% endblock %}

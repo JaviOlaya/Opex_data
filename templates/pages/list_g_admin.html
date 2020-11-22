@@ -4,8 +4,8 @@
 
 {% block content %}
 
-<h1 > ADMINISTRATIVE EXPENSES DATA LIST </h1>
-          <div id="main-container" style="display: flex; justify-content:center;">
+
+          <div class="cuerpo" style="margin-top:100px;margin-left:280px">
             
             <table class="table">
                 <thead >
@@ -15,7 +15,9 @@
                             
                             <th>Date of Expense</th>
                             <th >Project</th>
+
                             <th >Spending amount</th>
+                            
                             <!-- <th style="padding: 20px;">End Date</th> -->
                             <th >Creation Date</th>
                             <th>Update Date</th>
@@ -25,10 +27,8 @@
                 </thead>
                 {% for proyecto in object_list %}
                 <tr>
-                    <td>
-                        {{proyecto.id}}  
-                        
-                </td>
+                    <td><a href="{% url 'pages:gadmin' proyecto.id %}">{{proyecto.id}}</a></td>  
+                  
                    <td>
                         {{proyecto.fecha_gasto}}  
                         

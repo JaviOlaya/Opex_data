@@ -186,14 +186,14 @@ class GastoGas(models.Model):
         ('2', 'Units/m2'),
     ]      
     fechaGasto = models.DateField(blank=True,null=True,verbose_name="Expense generated on:")
-    CantidadGas = models.DecimalField(max_digits=7, decimal_places=2,blank=True)
+    CantidadGas = models.DecimalField(max_digits=7, decimal_places=2,blank=True, verbose_name="Gas quantity: ")
     unitGas = models.CharField(
         'unit of measurement',
         max_length=1,
         choices=UNIT_CHOICES, 
         default='0',
     )
-    PrecioGas = models.DecimalField(max_digits=7, decimal_places=2,blank=True)
+    PrecioGas = models.DecimalField(max_digits=7, decimal_places=2,blank=True, verbose_name="Price of gas: ")
     monedaBasuraSolida = models.CharField(
         'money parameter',
         max_length=30,

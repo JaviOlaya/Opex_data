@@ -3,23 +3,29 @@
 
 {% block content %}
 <style>
-    .boton{
-    
+    form {
+        margin: auto;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 1rem;
-        font-size: 1rem;
-        border: 1px solid whitesmoke;
-        box-shadow: 5px 5px 7px #294f36;
-        margin-bottom:10vh;
-        width:12vw;
-        height: 6vh;
-        border-radius: 30px 30px 30px 30px;
-        color:white;
-        background-color: #294f36 ;
-        font-family: 'Montserrat', sans-serif;
-    }
+        justify-content: space-between;
+      }
+        form input, form select, form textarea {
+            border-radius: 5px;
+            border: 1px solid green;
+            outline: none;
+            background: none;
+            padding: 5px;
+            width: 100%;
+          }
+            form label{
+                font-family: 'Montserrat', sans-serif;
+                
+          }
+          input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+          }
     </style>
     <h1 style="position:absolute;display:flex;align-self:center;">Add new Remedy Cost</h1>
 

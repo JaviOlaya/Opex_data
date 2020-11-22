@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/formularios.css' %}" />
+    <!-- <link rel="stylesheet" href="{% static 'css/formularios.css' %}" /> -->
     <link rel="stylesheet" href="{% static 'css/stylescalendar.css' %}" />
     <link rel="shortcut icon" href="{% static 'img/logo1.png' %}" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.css" />
@@ -23,7 +23,7 @@
           list-style: none;
           text-decoration: none;
           font-family: 'Josefin Sans', sans-serif;
-          overflow: auto;
+         
         }
         
         body{
@@ -124,7 +124,7 @@
           }
         }
         .active {
-          background-color: green;
+          background-color:  #316441;
           color: white;
         }   
         .dropdown-container {
@@ -191,7 +191,7 @@
                 </ul>
               
                 <li><a href="{% url 'calendar_app:calendar' %}"><i class="fas fa-calendar-alt"></i>Calendar</a></li>
-                <li><a href="#"><i class="fas fa-chart-pie"></i> Data Analysis</a></li>
+                <li><a href="{% url 'pages:analisis' %}"><i class="fas fa-chart-pie"></i> Data Analysis</a></li>
                 <li><a href="{% url 'mainapp:editProfile' %}"><i class="fas fa-user"></i>Edit Profile</a></li>
                 <li><a href="{% url 'mainapp:logout' %}"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
                 
@@ -200,7 +200,7 @@
         
       
     </div>
-        <div id="content" style="width:100vw;height:80vh;display:flex;" >
+        <div id="content" style="width:100vw;height:80vh;display:flex; justify-content:center;" >
             {% block content %}
             
             

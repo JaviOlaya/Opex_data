@@ -5,8 +5,8 @@
 {% block content %}
 
 
-          <div id="main-container" style="display: flex; justify-content:center;">
-            <h1 > ADMINISTRATIVE EXPENSES DATA LIST </h1>
+          <div class="cuerpo" style="margin-top:100px;margin-left:280px">
+            
             <table class="table">
                 <thead class="is-selected">
                     <tr>
@@ -24,10 +24,10 @@
                 </thead>
                 {% for proyecto in object_list %}
                 <tr>
-                    <td>
-                        {{proyecto.id}}  
+                    
+                        <td><a href="{% url 'pages:electricCost_detail' proyecto.id %}">{{proyecto.id}}</a></td>  
                         
-                </td>
+                
                  
                     <!-- <td>{{proyecto.description}}</td> -->
                     <td>{{proyecto.proyecto}}</td>

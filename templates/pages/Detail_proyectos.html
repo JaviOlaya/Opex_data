@@ -1,76 +1,25 @@
-{% extends 'layouts/layout.html' %}
 
-{% block title %}Projects{% endblock %}
+     {% extends 'layouts/layout.html' %}
 
-{% block content %}
+     {% block title %}
+         Project Detail
+     {% endblock title %}
+         
+     {% block content %}
+ <div style="display:flex; flex-direction: column;">
+    <h1>View of the detail of personnel expenses {{titulo}}</h1>
 
-
-
-<div class="cuerpo" style="margin-top:100px;margin-left:280px">
-    <table class="table">
-      <thead>
-        <tr class="is-selected">
-            <th>Name</th>
-            <th >Start Date</th>
-            <th>End Date</th>
-            <th>Creation Date</th>
-            <th>Update Date</th>
-            <th>User</th>
-            <th>Action</th>
-      </tr>
-      </thead>
-  
-      <tbody>
-        
-        {% for proyecto in object_list  %}
-        <tr>
-            <td>{{proyecto.nombre}}</td>
-            <td>{{proyecto.fecha_inicio}}</td>
-            <td>{{proyecto.fecha_final}}</td>
-            <td>{{proyecto.created_at}}</td>
-            <td>{{proyecto.updated_at}}</td>
-          <td>{{proyecto.user}}</td>
-          <td><a id="b1" href="{% url 'inputapp:updateProject' proyecto.id %}" style="color:green; margin-left:10px"><i class="fas fa-edit"></i></a> <a id="b1" href="{% url 'inputapp:deleteProject' proyecto.id %}" style="color:red;"><i class="fas fa-trash-alt"></i></a></td>
-          {% endfor %}
-      </tbody>
-    </table>
-
-  <div class="paginas">
-   
-  </div>
-  
-  {% if is_paginated %}
-  <nav class="pagination" role="navigation" aria-label="pagination">
-   
-    <ul class="pagination-list">
-      {% if page_obj.has_previous %}
-     <li> <a href="?page={{page_obj.previous_page_number}}" class="pagination-previous">Previous</a></li>
-      {% endif %}
-    {% for pagina in paginator.page_range %}
-      
-      {% ifequal pagina page_obj.number  %}
-      <li><a class="pagination-link is-current" aria-label="Page 46" aria-current="page">{{pagina}}</a></li>
-      {% else %}
-      <li>
-        <a class="pagination-link" href="?page={{pagina}}" >{{ pagina }}</a>
-      </li>
-      {% endifequal %}
-        
-    
-    {% endfor %}
-    
-    {% if page_obj.has_next %}
-      <li><a href="?page={{page_obj.next_page_number}}" class="pagination-next">Next page</a></li>
-    {% endif %}
-      
-    
-  </ul>
-    
-  
-  </nav>
-</div>
-  {% endif %}
-
-
-
-{% endblock %}
+     
+    <h3 style="align-self: center;">All the data: </h3>
+    <ul style="align-self: center;">
+        <li> Project name: {{proyecto.nombre}}</li>
+        <li> Description: {{proyecto.descripcion}}</li>
+        <li> Total area of the project {{proyecto.area_total}} m² </li>
+        <li> Start date: {{proyecto.fecha_inicio}}</li>
+        <li> End date{{proyecto.fecha_final}}</li>
+        <li> Registry created at: {{proyecto.fecha_created_at}}</li>
+        <li> Registry updated at: {{proyecto.fecha_updated_at}}</li>
+        <li> User: {{proyecto.user}}</li>
+    </ul>
+ </div>
+     {% endblock %}
